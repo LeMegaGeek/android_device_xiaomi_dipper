@@ -700,4 +700,6 @@
         <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
     </integer-array>
 
+    <!-- CaCamOS: default USB device mode is Webcam/UVC. -->
+    <bool name="config_usbDefaultToUvc">true</bool>
 </resources>
