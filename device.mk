@@ -23,6 +23,18 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
+# CaCam OS webcam mode
+#
+# Expose the phone as a standard USB Video Class gadget. The actual camera
+# pipeline is Android's privileged DeviceAsWebcam service; hosts see a regular
+# USB webcam instead of a CaCam/BGOBS-specific source.
+PRODUCT_PACKAGES += \
+    CaCamOsDeviceAsWebcamDipper \
+    DeviceAsWebcam
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.usb.uvc.enabled=true
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
